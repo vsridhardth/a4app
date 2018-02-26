@@ -1,0 +1,70 @@
+<h1>{{name}} World </h1>
+<ul>
+  <li> Age: {{age}}  </li>
+  <li> Email: {{email}} </li>
+  <li>{{address.street}},  {{address.city}}, {{address.state}}</li>
+</ul>
+
+
+<button (click)="onClick()" class="btn btn-primary">Push here!!</button>
+
+<h1>Hobbies</h1>
+<form (submit)="addHobby(hobby.value)">
+  <div>
+    <label for="hobby">Hobby:</label>
+    <input type="text" #hobby>
+  </div>
+</form>
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="name" control-label col-sm-2> Name: </label>
+    <input type="text" [(ngModel)] = "name" name="name" class="col-sm-4">
+  </div>
+  <div class="form-group">
+    <label for="name" control-label col-sm-2> Age: </label>
+    <input type="number" [(ngModel)] = "age" name="age" class="col-sm-4">
+  </div>
+  <div class="form-group">
+    <label for="Email" control-label col-sm-2> Email: </label>
+    <input type="text" [(ngModel)] = "email" name="email" class="col-sm-4">
+  </div>
+</form>
+
+<div class="container">
+  <div *ngFor="let hobby of hobbies; let i = index">
+    <div class="row">
+      <div class="col-*-*">
+          {{i+1}}: {{hobby}} 
+      </div>
+      <div class="col-*-*">
+          <button (click) = "deleteHobby(hobby)">X</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h1>Posts</h1>
+
+<div class="container">
+  <table class="table table-fixed table-striped" >
+    <thead>
+      <tr>
+        <th class="col-xs-2">ID</th>
+        <th class="col-xs-2">USER ID</th>
+        <th class="col-xs-4">TITLE</th>
+        <th class="col-xs-8">DESCRIPTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Post of posts">
+        <td class="col-xs-2">{{Post.id}}</td>
+        <td class="col-xs-2">{{Post.userId}}</td>
+        <td class="col-xs-4">{{Post.title}}</td>
+        <td class="col-xs-8">{{Post.body}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  

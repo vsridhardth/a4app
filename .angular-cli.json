@@ -48,6 +48,10 @@
       "exclude": "**/node_modules/**"
     }
   ],
+  "styles": [
+    "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "styles.scss"
+  ],
   "test": {
     "karma": {
       "config": "./karma.conf.js"
